@@ -1,4 +1,4 @@
-FROM whl-ros-melodic-desktop-vnc:latest
+FROM cyn-ros-melodic-desktop-vnc:develop
 
 # ** [Optional] Uncomment this section to install additional packages. **
 #
@@ -16,7 +16,7 @@ RUN apt-get update \
    && rm -rf /var/lib/apt/lists/*
 ENV DEBIAN_FRONTEND=dialog
 
-USER whl
+USER cyn
 # Set up auto-source of workspace for ros user
 ARG WORKSPACE
 RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/whl/.bashrc
@@ -30,5 +30,5 @@ RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/in
 # RUN /bin/bash -c 'source /home/whl/.bashrc'
 
 
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
-CMD ["--wait"]
+#ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+#CMD ["--wait"]
