@@ -3,13 +3,13 @@
 	"dockerFile": "Dockerfile",
 	"image": "whl/vscode-ros-moveit-vnc:develop",
 	"workspaceFolder": "/workspace",
-	"workspaceMount": "source=/home/whl/code/ws_moveit,target=/workspace,type=bind,consistency=cached",
+	"workspaceMount": "source=/home/cyn/code/ws_moveit,target=/workspace,type=bind,consistency=cached",
 	// "build": {
 	// 	"args": {
 	// 		"WORKSPACE": "${containerWorkspaceFolder}"
 	// 	}
 	// },
-	"remoteUser": "whl",
+	"remoteUser": "cyn",
 		// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 			"dotjoshjohnson.xml",
@@ -24,22 +24,22 @@
 			"twxs.cmake",
 			"yzhang.markdown-all-in-one"
 		],
-	"appPort": [
-		"0.0.0.0:5902:5901",
-		"0.0.0.0:6902:6901",
-	],
+	// "appPort": [
+	// 	"0.0.0.0:5902:5901",
+	// 	"0.0.0.0:6902:6901",
+	// ],
 	"runArgs": [
-		// "--network=host",
+		"--network=host",
 		//"--volume=/home/whl/.ssh:/home/whl/.ssh",
 		//"--volume=/media:/media",
 		//"--volume=/home/whl/.torch:/home/whl/.torch",
-		//"--volume=/home/whl/data:/home/whl/data",
-		//"--privileged",
-		//"--volume=/dev/bus/usb:/dev/bus/usb",
-		//"--cap-add=SYS_PTRACE",
-		//"--security-opt=seccomp:unconfined",
-		//"--security-opt=apparmor:unconfined",
-		//"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+		"--volume=/home/cyn/data:/home/cyn/data",
+		"--privileged",
+		"--volume=/dev/bus/usb:/dev/bus/usb",
+		"--cap-add=SYS_PTRACE",
+		"--security-opt=seccomp:unconfined",
+		"--security-opt=apparmor:unconfined",
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
 		//"--entrypoint=/dockerstartup/vnc_startup.sh",
 		//"-it",
 	],

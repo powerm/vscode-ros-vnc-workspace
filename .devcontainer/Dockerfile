@@ -19,15 +19,15 @@ ENV DEBIAN_FRONTEND=dialog
 USER cyn
 # Set up auto-source of workspace for ros user
 ARG WORKSPACE
-RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/whl/.bashrc
+RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/cyn/.bashrc
 
 # # Change USER to 0 to get the root
-# USER whl
+USER cyn
 
-# # setup environment, now in the user mode
-# RUN echo "source /opt/ros/melodic/setup.bash" >> $HOME/.bashrc
-# # source is the command in /bin/bash, while the default shell is /bin/sh
-# RUN /bin/bash -c 'source /home/whl/.bashrc'
+# setup environment, now in the user mode
+RUN echo "source /opt/ros/melodic/setup.bash" >> $HOME/.bashrc
+# source is the command in /bin/bash, while the default shell is /bin/sh
+RUN /bin/bash -c 'source /home/cyn/.bashrc'
 
 
 #ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]

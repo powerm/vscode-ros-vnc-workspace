@@ -6,27 +6,37 @@
         {
             "label": "catkin config",
             "type": "shell",
-            "command":"catkin config",
+            "command":"catkin config --extend /opt/ros/melodic --cmake-args -DCMAKE_BUILD_TYPE=Debug",
             "args":[
-                "--extend /opt/ros/melodic",
-                "--cmake -args -DCMAKE_BUILD_TYPE=Debug"
-            ]
+
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "catkin build",
             "type": "shell",
-            "command": "catkin build",
+            "command": "catkin build -j4",
             "args":[
-                "j4",
             ],
             "problemMatcher":[
                 "$catkin-gcc"
-            ]
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "catkin clean",
             "type": "shell",
             "command":"catkin clean",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
 
         }
 
