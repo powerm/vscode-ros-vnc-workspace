@@ -4,9 +4,31 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "catkin config",
             "type": "shell",
-            "command": "echo Hello"
+            "command":"catkin config",
+            "args":[
+                "--extend /opt/ros/melodic",
+                "--cmake -args -DCMAKE_BUILD_TYPE=Debug"
+            ]
+        },
+        {
+            "label": "catkin build",
+            "type": "shell",
+            "command": "catkin build",
+            "args":[
+                "j4",
+            ],
+            "problemMatcher":[
+                "$catkin-gcc"
+            ]
+        },
+        {
+            "label": "catkin clean",
+            "type": "shell",
+            "command":"catkin clean",
+
         }
+
     ]
 }
