@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.repos": "yaml",
+        "*.world": "xml",
+        "*.xacro": "xml"
+    },
+    //  Autocomplete from ros python packages
+    "python.autoComplete.extraPaths": [
+            "/opt/ros/melodic/lib/python3.8/site-packages/"
+    ],
+    // Environment file lets vscode find python files within workspace
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.pythonPath": "/usr/bin/python"
+}
